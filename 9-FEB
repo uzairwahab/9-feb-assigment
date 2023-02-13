@@ -1,0 +1,112 @@
+Q1, Create a vehicle class with an init method having instance variables as name_of_vehicle, max_speed
+and average_of_vehicle.
+ans.
+class vehicle :
+    def __init__(self, vehicle_name, max_speed, average):
+        
+        self.vehicle_name = vehicle_name
+        self.max_speed= max_speed
+        self.average = average
+       
+    def vehicle_details(self):
+        print(self.vehicle_name,self.max_speed,self.average)
+    
+vehicle_1 = vehicle('scarpio',200, 10)
+vehicle_1.vehicle_name
+'scarpio'
+vehicle_1.max_speed
+200
+
+vehicle_1.vehicle_details()
+scarpio 200 10
+
+
+Q2. Create a child class car from the vehicle class created in Que 1, which will inherit the vehicle class.
+Create a method named seating_capacity which takes capacity as an argument and returns the name of
+the vehicle and its seating capacity.
+ANS. class Vehicle:
+    def __init__(self, name, manufacturer, engine_type):
+        self.name = name
+        self.manufacturer = manufacturer
+        self.engine_type = engine_type
+
+class Car(Vehicle):
+    def seating_capacity(self, capacity):
+        return f"{self.name} has a seating capacity of {capacity}."
+
+car = Car("Sedan", "Toyota", "Petrol")
+print(car.seating_capacity(5))
+Sedan has a seating capacity of 5.
+
+
+
+Q3. What is multiple inheritance? Write a python code to demonstrate multiple inheritance.
+ ANS. Multiple inheritance is a feature of object-oriented programming languages that allows a class to inherit properties and behaviors from more than one parent class.
+ In other words, a class can inherit attributes and methods from multiple parent classes, rather than just a single parent class.
+class perent_1:
+    def perent(self):
+        print('this is my first perent class' )
+    
+class perent_2 :
+    def parent2(self):
+        print('this is my second parent class ')
+class child (perent_1, perent_2) :
+    def child(self):
+        print('this my child class')
+
+c= child()
+
+c.perent()
+​
+this is my first perent class
+
+c.parent2()
+this is my second parent class 
+c.child()
+this my child class
+
+
+
+Q4. What are getter and setter in python? Create a class and create a getter and a setter method in this class.
+ANS.Getters: These are the methods used in Object-Oriented Programming (OOPS) which helps to access the private attributes from a class.
+Setters: These are the methods used in OOPS feature which helps to set the value to private attributes in a class. 
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+    def get_name(self):
+        return self._name
+
+    def set_name(self, name):
+        self._name = name
+
+    name = property(get_name, set_name)
+
+person = Person("John Doe")
+print(person.name)
+person.name = "Jane Doe"
+print(person.name)
+
+
+
+
+Q5.What is method overriding in python? Write a python code to demonstrate method overriding.
+ANS. What is Method Overriding in Python? Method overriding is a feature of object-oriented programming languages where the
+subclass or child class can provide the program with specific characteristics or a specific implementation process of data provided that are
+already defined in the parent class or superclass.
+class Parent:
+    def method(self):
+        print("Parent method")
+
+class Child(Parent):
+    def method(self):
+        print("Child method")
+
+p = Parent()
+p.method()
+
+c = Child()
+c.method()
+
+
+
